@@ -1,0 +1,81 @@
+---
+const posts = [
+  { caption: 'Morning vibes with our signature Basrah Latte ☕✨ #exit_albasra', likes: '234', comments: '18', time: '2d' },
+  { caption: 'Fresh off the grill — Hammour perfection 🐟🔥 #BasraFood', likes: '189', comments: '12', time: '4d' },
+  { caption: 'Kunafa goals 🧡 Who wants a slice? #DessertHeaven', likes: '312', comments: '24', time: '1w' },
+  { caption: 'The team that makes the magic happen 👨‍🍳💜 #ExitFamily', likes: '156', comments: '9', time: '1w' },
+  { caption: 'Cozy corners for your evening escape 🌙 #CafeVibes', likes: '278', comments: '15', time: '2w' },
+  { caption: 'Shawarma o\'clock! Who\'s joining us? 🌯 #FoodLovers', likes: '198', comments: '11', time: '2w' },
+];
+---
+
+<section class="relative py-24 lg:py-32 bg-gradient-to-br from-espresso via-espresso/95 to-mocha/90 overflow-hidden">
+  <!-- Decorative -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-caramel/30 to-transparent"></div>
+  <div class="absolute top-20 right-20 w-72 h-72 bg-terracotta/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5 border border-white/10">
+        <svg class="w-4 h-4 text-caramel" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <span class="text-cream/80 text-sm font-medium">@exit_albasra</span>
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-cream leading-tight">
+        Follow Our
+        <span class="text-caramel">Journey</span>
+      </h2>
+      <p class="text-cream/60 text-lg">
+        Daily inspiration from our kitchen, our coffee bar, and our beautiful Basrah community.
+      </p>
+    </div>
+
+    <!-- Instagram Feed Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {posts.map((post, i) => (
+        <a
+          href="https://www.instagram.com/exit_albasra"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-latte/20 to-mocha/20 border border-white/5 hover:border-caramel/30 transition-all duration-500 hover:scale-[1.02]"
+        >
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-cream/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+          </div>
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-espresso/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+            <div class="text-center space-y-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div class="flex items-center justify-center gap-6">
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-5 h-5 text-cream" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="text-cream font-semibold text-sm">{post.likes}</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-5 h-5 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                  <span class="text-cream font-semibold text-sm">{post.comments}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Time badge -->
+          <div class="absolute top-3 right-3 bg-espresso/60 backdrop-blur-sm text-cream/70 text-xs px-2 py-1 rounded-full">{post.time}</div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Follow CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="https://www.instagram.com/exit_albasra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm text-cream border border-white/20 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 hover:scale-105"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow @exit_albasra
+      </a>
+    </div>
+  </div>
+</section>

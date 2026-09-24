@@ -1,0 +1,51 @@
+---
+const features = [
+  {
+    icon: 'clock',
+    title: 'Open Daily',
+    description: 'We\'re here to welcome you from morning until late evening, seven days a week.',
+  },
+  {
+    icon: 'wifi',
+    title: 'Free Wi-Fi',
+    description: 'Stay connected while you sip. Perfect for remote workers and study sessions.',
+  },
+  {
+    icon: 'delivery',
+    title: 'Delivery Available',
+    description: 'Can\'t make it in? We\'ll bring Exit\'s flavors right to your doorstep.',
+  },
+  {
+    icon: 'party',
+    title: 'Private Events',
+    description: 'Celebrate birthdays, gatherings, and special occasions in our private spaces.',
+  },
+];
+---
+
+<section class="py-20 bg-latte/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature) => (
+        <div class="text-center group">
+          <div class="w-16 h-16 bg-espresso rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:bg-terracotta transition-all duration-300">
+            {feature.icon === 'clock' && (
+              <svg class="w-7 h-7 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            )}
+            {feature.icon === 'wifi' && (
+              <svg class="w-7 h-7 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0"/></svg>
+            )}
+            {feature.icon === 'delivery' && (
+              <svg class="w-7 h-7 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+            )}
+            {feature.icon === 'party' && (
+              <svg class="w-7 h-7 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0A1.5 1.5 0 003 15.546M12 2v3m0 0a3 3 0 013 3v1a3 3 0 01-6 0v-1a3 3 0 013-3z"/></svg>
+            )}
+          </div>
+          <h3 class="font-display font-bold text-espresso text-xl mb-2">{feature.title}</h3>
+          <p class="text-espresso/60 text-sm leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

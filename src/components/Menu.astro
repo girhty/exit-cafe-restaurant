@@ -1,0 +1,111 @@
+---
+const menuCategories = [
+  {
+    name: 'Signature Coffees',
+    icon: 'coffee',
+    items: [
+      { name: 'Basrah Latte', price: '4,500 IQD', description: 'Our signature blend with cardamom & saffron', popular: true },
+      { name: 'Exit Espresso', price: '3,000 IQD', description: 'Bold double-shot with caramel undertones', popular: false },
+      { name: 'Rose Cappuccino', price: '5,000 IQD', description: 'Delicate rose-infused with silky foam', popular: true },
+      { name: 'Date Mocha', price: '5,500 IQD', description: 'Rich chocolate blended with Iraqi date syrup', popular: false },
+      { name: 'Turkish Coffee', price: '3,500 IQD', description: 'Traditional method, served with lokum', popular: false },
+      { name: 'Iced Arabic', price: '4,000 IQD', description: 'Cold-brewed Arabic with cardamom ice', popular: false },
+    ],
+  },
+  {
+    name: 'Main Dishes',
+    icon: 'dish',
+    items: [
+      { name: 'Grilled Hammour', price: '18,000 IQD', description: 'Fresh Gulf fish, lemon & herb marinade', popular: true },
+      { name: 'Masgouf Platter', price: '22,000 IQD', description: 'Traditional tigris-style grilled carp', popular: true },
+      { name: 'Lamb Kebab', price: '16,000 IQD', description: 'Tender charcoal-grilled with saffron rice', popular: false },
+      { name: 'Chicken Machboos', price: '14,000 IQD', description: 'Spiced Basra-style rice with tender chicken', popular: false },
+      { name: 'Shawarma Plate', price: '12,000 IQD', description: 'Slow-roasted, served with garlic & pickles', popular: true },
+    ],
+  },
+  {
+    name: 'Sweet Treats',
+    icon: 'dessert',
+    items: [
+      { name: 'Kunafa', price: '6,000 IQD', description: 'Golden crispy with cheese & syrup', popular: true },
+      { name: 'Basbousa', price: '4,000 IQD', description: 'Semolina cake with rose water & cream', popular: false },
+      { name: 'Date Cake', price: '5,000 IQD', description: 'Warm, moist with caramel & nuts', popular: false },
+      { name: 'Ice Cream Platter', price: '7,000 IQD', description: '3 scoops: saffron, pistachio, rose', popular: true },
+    ],
+  },
+];
+---
+
+<section id="menu" class="relative py-24 lg:py-32 bg-cream">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-latte to-transparent"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Our Menu</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-espresso leading-tight">
+        Crafted With
+        <span class="text-terracotta">Passion</span>
+      </h2>
+      <p class="text-espresso/60 text-lg">
+        From aromatic coffees to authentic Iraqi delicacies — each item is a journey of flavor.
+      </p>
+    </div>
+
+    <!-- Menu Categories -->
+    <div class="space-y-16">
+      {menuCategories.map((category, catIdx) => (
+        <div class="space-y-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-espresso rounded-xl flex items-center justify-center shadow-lg">
+              {category.icon === 'coffee' && (
+                <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+              )}
+              {category.icon === 'dish' && (
+                <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0A1.5 1.5 0 003 15.546M12 2v3m0 0a3 3 0 013 3v1a3 3 0 01-6 0v-1a3 3 0 013-3z"/></svg>
+              )}
+              {category.icon === 'dessert' && (
+                <svg class="w-6 h-6 text-caramel" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+              )}
+            </div>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-espresso">{category.name}</h3>
+            <div class="flex-1 h-px bg-gradient-to-r from-latte to-transparent ml-4"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            {category.items.map((item) => (
+              <div class="group relative bg-white rounded-2xl p-6 border border-latte/50 hover:border-caramel/30 hover:shadow-xl hover:shadow-espresso/5 transition-all duration-300 hover:-translate-y-1">
+                {item.popular && (
+                  <span class="absolute -top-2.5 left-6 bg-terracotta text-cream text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                    Popular
+                  </span>
+                )}
+                <div class="flex items-start justify-between gap-4">
+                  <div class="space-y-1.5">
+                    <h4 class="font-semibold text-espresso text-lg group-hover:text-terracotta transition-colors">{item.name}</h4>
+                    <p class="text-espresso/50 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                  <span class="font-display font-bold text-espresso text-lg whitespace-nowrap bg-latte/50 px-4 py-1.5 rounded-full group-hover:bg-terracotta group-hover:text-cream transition-all">
+                    {item.price}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <p class="text-espresso/50 text-sm mb-6 italic">Prices may vary. Full menu available in-store. Ask about daily specials!</p>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 bg-espresso text-cream px-8 py-4 rounded-full text-lg font-semibold hover:bg-terracotta transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+      >
+        Reserve Your Table
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

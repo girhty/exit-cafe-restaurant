@@ -1,0 +1,68 @@
+---
+const galleryItems = [
+  { title: 'Basrah Latte', category: 'Coffee', aspect: 'col-span-2 row-span-2' },
+  { title: 'Grilled Hammour', category: 'Main', aspect: 'col-span-1 row-span-1' },
+  { title: 'Kunafa', category: 'Dessert', aspect: 'col-span-1 row-span-1' },
+  { title: 'Cozy Corner', category: 'Ambiance', aspect: 'col-span-1 row-span-2' },
+  { title: 'Shawarma Plate', category: 'Main', aspect: 'col-span-1 row-span-1' },
+  { title: 'Rose Cappuccino', category: 'Coffee', aspect: 'col-span-1 row-span-1' },
+  { title: 'Date Mocha', category: 'Coffee', aspect: 'col-span-1 row-span-1' },
+  { title: 'Lamb Kebab', category: 'Main', aspect: 'col-span-2 row-span-1' },
+];
+---
+
+<section id="gallery" class="relative py-24 lg:py-32 bg-white">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-latte to-transparent"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Gallery</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-espresso leading-tight">
+        A Feast for
+        <span class="text-terracotta">the Eyes</span>
+      </h2>
+      <p class="text-espresso/60 text-lg">
+        Peek into the world of Exit — where every moment is Instagram-worthy.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[240px]">
+      {galleryItems.map((item, i) => (
+        <div class={`group relative ${item.aspect} rounded-2xl overflow-hidden cursor-pointer`}>
+          <div class="absolute inset-0 bg-gradient-to-br from-latte via-caramel/20 to-mocha/30">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2">
+                <div class="w-12 h-12 bg-espresso/10 rounded-xl flex items-center justify-center mx-auto">
+                  <svg class="w-6 h-6 text-mocha/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <span class="text-mocha/40 text-sm font-medium">{item.category}</span>
+              </div>
+            </div>
+          </div>
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-5">
+            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span class="text-caramel text-xs font-semibold uppercase tracking-wider">{item.category}</span>
+              <h3 class="text-cream font-display font-bold text-xl">{item.title}</h3>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Instagram CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="https://www.instagram.com/exit_albasra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-gradient-to-r from-terracotta to-mocha text-cream px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-terracotta/20 hover:scale-105 transition-all duration-300"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow @exit_albasra on Instagram
+      </a>
+    </div>
+  </div>
+</section>
